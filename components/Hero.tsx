@@ -77,12 +77,7 @@ export default function Hero() {
   };
 
   return (
-    <section 
-      className="relative min-h-screen flex flex-col"
-      style={{
-        background: 'radial-gradient(14.87% 26.43% at 50% 61.36%, #FAC8E6 0%, rgba(255, 94, 62, 0) 100%), radial-gradient(33.67% 60.34% at 50% 70.75%, #B53EFF 0%, #FFFFFF 100%), #FFFFFF',
-      }}
-    >
+    <section className="relative min-h-screen flex flex-col">
       {/* Hero Title - Fades out in chat mode */}
       <AnimatePresence>
         {!isChatMode && (

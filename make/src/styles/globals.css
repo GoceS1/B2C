@@ -1,0 +1,40 @@
+
+@font-face {
+font-display: swap;
+font-family: 'CameraPlainVariable';
+font-style: normal;
+font-weight: normal;
+font-stretch: normal;
+unicode-range: U+0-10FFFF;
+src: url('https://storage.googleapis.com/download/storage/v1/b/prd-shared-services.firebasestorage.app/o/h2m-assets%2F396596764aebbe25ba1c45f19091f48a7e17a9e5?generation=1759902374508876&alt=media') format('woff2');
+}
+
+@font-face {
+font-display: swap;
+font-family: 'CameraPlainVariable';
+font-style: italic;
+font-weight: 400;
+font-stretch: normal;
+unicode-range: U+0-10FFFF;
+src: url('https://storage.googleapis.com/download/storage/v1/b/prd-shared-services.firebasestorage.app/o/h2m-assets%2F022da261b951c5bbe7a546e353ba3b18a7fff576?generation=1760460251007037&alt=media') format('woff2');
+}
+
+@font-face {
+font-display: swap;
+font-family: 'Roboto Mono';
+font-style: normal;
+font-weight: 400;
+font-stretch: normal;
+unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+src: url('https://storage.googleapis.com/download/storage/v1/b/prd-shared-services.firebasestorage.app/o/h2m-assets%2F28a18dc25313955da6fde06ffafb48f0f5088c15?generation=1759902374494465&alt=media') format('woff2');
+}
+
+@font-face {
+font-display: swap;
+font-family: 'Roboto Mono';
+font-style: normal;
+font-weight: 700;
+font-stretch: normal;
+unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+src: url('https://storage.googleapis.com/download/storage/v1/b/prd-shared-services.firebasestorage.app/o/h2m-assets%2F28a18dc25313955da6fde06ffafb48f0f5088c15?generation=1759902374494465&alt=media') format('woff2');
+}
