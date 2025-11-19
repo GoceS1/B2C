@@ -1,6 +1,9 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import LovableBackground from "@/components/LovableBackground";
+import DestinationsCarousel from "@/components/DestinationsCarousel";
+import GuidesCarousel from "@/components/GuidesCarousel";
+import ToursCarousel from "@/components/ToursCarousel";
 
 export default function Home() {
   return (
@@ -9,6 +12,9 @@ export default function Home() {
       <Header />
       <main className="min-h-screen">
         <Hero />
+        <DestinationsCarousel />
+        <GuidesCarousel />
+        <ToursCarousel />
       </main>
     </div>
   );

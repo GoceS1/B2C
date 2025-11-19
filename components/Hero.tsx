@@ -4,6 +4,8 @@ import { useState, useRef, useEffect } from "react";
 import { Search, Send } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import DynamicPlaceholder from "@/components/DynamicPlaceholder";
+import LogoCarousel from "@/components/LogoCarousel";
+import AnimatedSwitchingText from "@/components/AnimatedSwitchingText";
 
 type Message = {
   id: number;
@@ -77,7 +79,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col">
+    <section className="relative flex flex-col">
       {/* Hero Title - Fades out in chat mode */}
       <AnimatePresence>
         {!isChatMode && (
@@ -85,35 +87,58 @@ export default function Hero() {
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="pt-32 px-6"
+            className="pt-24 pb-12 px-6"
           >
-            <div className="text-center mb-12 max-w-5xl mx-auto">
-              <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight text-black">
-                Find your ideal tour
-              </h1>
-              <p className="text-xl text-text-secondary max-w-3xl mx-auto mb-20">
+            <div className="text-center max-w-4xl mx-auto">
+              <div className="flex flex-col items-center justify-center">
+                <h1 className="text-5xl md:text-6xl font-bold mb-4 leading-tight text-black inline-flex items-baseline flex-nowrap whitespace-nowrap">
+                  <span>Find your ideal&nbsp;</span>
+                  <AnimatedSwitchingText />
+                </h1>
+              </div>
+              <p className="text-lg text-text-secondary max-w-2xl mx-auto mb-8">
                 Just say where and when
               </p>
 
               {/* Search bar in normal hero position */}
-              <div className="relative max-w-2xl mx-auto">
-                <form onSubmit={handleSendMessage}>
-                  <div className="relative flex items-center bg-white rounded-full shadow-lg border border-gray-200 pl-6 pr-2 py-2 hover:shadow-xl transition-shadow">
-                    <Search className="w-5 h-5 text-text-secondary shrink-0" />
-                    <DynamicPlaceholder
-                      type="text"
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      className="border-0 focus-visible:ring-0 shadow-none h-12 px-4 bg-transparent w-full"
-                    />
-                    <button 
-                      type="submit"
-                      className="shrink-0 rounded-full px-8 py-2 bg-[#EBC8EB] text-gray-900 font-semibold hover:bg-[#DEB8DE] transition-colors"
-                    >
-                      Search
-                    </button>
-                  </div>
-                </form>
+              <div className="relative max-w-2xl mx-auto mt-12 sm:mt-16">
+                <div
+                  className="absolute inset-0 -z-10 rounded-full opacity-60 blur-2xl"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, #FF8BCF 0%, #FF8BCF 45%, #F3B0FF 70%, #D3B7FF 100%)",
+                  }}
+                />
+                <div
+                  className="relative rounded-full p-[2px] shadow-[0_25px_60px_rgba(243,176,255,0.35)]"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, #FF8BCF 0%, #FF8BCF 45%, #F3B0FF 70%, #D3B7FF 100%)",
+                  }}
+                >
+                  <form onSubmit={handleSendMessage}>
+                    <div className="relative flex items-center bg-white rounded-full pl-6 pr-2 py-2">
+                      <Search className="w-5 h-5 text-text-secondary shrink-0" />
+                      <DynamicPlaceholder
+                        type="text"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        className="border-0 focus-visible:ring-0 shadow-none h-12 px-4 bg-transparent w-full"
+                      />
+                      <button 
+                        type="submit"
+                        className="shrink-0 rounded-full px-8 py-2 bg-[#87CEEB] text-white font-semibold hover:bg-[#6FB6D5] transition-colors"
+                      >
+                        Search
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              {/* Logo Carousel */}
+              <div className="max-w-3xl mx-auto mt-10">
+                <LogoCarousel />
               </div>
             </div>
           </motion.div>
@@ -173,23 +198,38 @@ export default function Hero() {
             </div>
 
             {/* Input - fixed at bottom */}
-            <form onSubmit={handleSendMessage}>
-              <div className="relative flex items-center bg-white rounded-full shadow-lg border border-gray-200 pl-6 pr-2 py-2 hover:shadow-xl transition-shadow">
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Type your message..."
-                  className="border-0 focus-visible:ring-0 focus:outline-none shadow-none h-12 px-4 bg-transparent w-full"
-                  autoFocus
-                />
-                <button
-                  type="submit"
-                  className="shrink-0 rounded-full px-6 py-2 bg-[#EBC8EB] text-gray-900 font-semibold hover:bg-[#DEB8DE] transition-colors flex items-center gap-2"
-                >
-                  <Send className="w-4 h-4" />
-                  Send
-                </button>
+            <form onSubmit={handleSendMessage} className="relative">
+              <div
+                className="absolute inset-0 -z-10 rounded-full opacity-60 blur-2xl"
+                style={{
+                  background:
+                    "linear-gradient(90deg, #FF8BCF 0%, #FF8BCF 45%, #F3B0FF 70%, #D3B7FF 100%)",
+                }}
+              />
+              <div
+                className="relative rounded-full p-[2px] shadow-[0_25px_60px_rgba(243,176,255,0.35)]"
+                style={{
+                  background:
+                    "linear-gradient(90deg, #FF8BCF 0%, #FF8BCF 45%, #F3B0FF 70%, #D3B7FF 100%)",
+                }}
+              >
+                <div className="relative flex items-center bg-white rounded-full pl-6 pr-2 py-2">
+                  <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder="Type your message..."
+                    className="border-0 focus-visible:ring-0 focus:outline-none shadow-none h-12 px-4 bg-transparent w-full"
+                    autoFocus
+                  />
+                  <button
+                    type="submit"
+                    className="shrink-0 rounded-full px-6 py-2 bg-[#87CEEB] text-white font-semibold hover:bg-[#6FB6D5] transition-colors flex items-center gap-2"
+                  >
+                    <Send className="w-4 h-4" />
+                    Send
+                  </button>
+                </div>
               </div>
             </form>
           </div>
