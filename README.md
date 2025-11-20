@@ -1,29 +1,29 @@
-# Real Estate Landing Page
+# Keyguidesconnect - Travel Guide Platform
 
-A modern, clean landing page for real estate search built with Next.js, Tailwind CSS, and TypeScript.
+A modern, beautiful platform for connecting travelers with certified local guides across Europe. Built with Next.js, Tailwind CSS, and TypeScript.
 
 ## 🚀 Tech Stack
 
 - **Framework**: Next.js 15 with App Router
 - **Styling**: Tailwind CSS with custom design system
-- **UI Components**: Custom components inspired by shadcn/ui
+- **UI Components**: Custom components with shadcn/ui patterns
 - **Typography**: Inter font (optimized with next/font)
 - **Icons**: Lucide React
-- **Animations**: Framer Motion (ready to use)
+- **Animations**: Framer Motion
 - **Language**: TypeScript
 
 ## 🎨 Design System
 
-### Colors
-- **Primary**: Purple (#6F3FF5)
-- **Accent Orange**: #FF6A3D
-- **Accent Magenta**: #FF82C6
+### Brand Colors
+- **Primary Pink**: #EBC8EB
+- **Secondary Pink**: #DEB8DE
+- **Purple**: #9B5CC8, #D3B7FF
 - **Background**: White (#FFFFFF)
 - **Text**: Black (#0F172A) / Gray (#64748B)
 
 ### Typography
 - **Font**: Inter (system-ui fallback)
-- **Style**: Clean, minimal, Notion/Lovable-inspired
+- **Style**: Clean, modern, travel-inspired
 
 ## 🛠️ Getting Started
 
@@ -49,37 +49,56 @@ npm start
 
 ```
 ├── app/
-│   ├── layout.tsx       # Root layout with Inter font
-│   ├── page.tsx         # Home page
-│   └── globals.css      # Global styles
+│   ├── layout.tsx              # Root layout
+│   ├── page.tsx                 # Home page
+│   └── globals.css              # Global styles
 ├── components/
-│   ├── Hero.tsx         # Hero section with search bar
-│   └── ui/              # Reusable UI components
+│   ├── Header.tsx               # Navigation header
+│   ├── Hero.tsx                 # Hero section with AI search bar
+│   ├── LogoCarousel.tsx         # Auto-scrolling certification logos
+│   ├── GuidesCarousel.tsx       # Featured guides carousel
+│   ├── ToursCarousel.tsx        # Popular tours carousel
+│   ├── DestinationsCarousel.tsx # Popular countries carousel
+│   └── ui/                      # Reusable UI components
 │       ├── button.tsx
-│       ├── input.tsx
-│       └── card.tsx
+│       ├── animated-text.tsx
+│       └── glow-effect.tsx
 └── lib/
-    └── utils.ts         # Utility functions (cn helper)
+    └── utils.ts                 # Utility functions (cn helper)
 ```
 
 ## ✨ Features
 
-- **Hero Section**: Large, centered hero with gradient text
-- **Search Bar**: Interactive search with dropdown results
-- **Quick Filters**: Property type filter buttons
-- **Stats Section**: Display key metrics
-- **Responsive**: Mobile-first design
-- **Accessible**: Built with semantic HTML and ARIA labels
+### 🎯 Core Features
+- **AI-Powered Search**: Interactive search bar that transforms into a chat interface
+- **Dynamic Hero**: Animated text switching between "tour" and "guide"
+- **Certified Guides**: Logo carousel showcasing tourism association certifications
+- **Featured Guides**: Horizontal carousel with guide profiles, pricing, and locations
+- **Popular Tours**: Tour listings with signature and association tour types
+- **Destinations**: Beautiful country cards with hover effects
+
+### 🎨 UI/UX Features
+- **Responsive Design**: Mobile-first, works beautifully on all devices
+- **Smooth Animations**: Framer Motion for fluid transitions
+- **Interactive Carousels**: Horizontal scrolling with navigation arrows
+- **Gradient Effects**: Subtle pink/purple gradients on search bar
+- **Clean Header**: Minimalist navigation with centered links
+
+### 🎭 Tour Types
+- **Signature Tours**: Tours by individual guides with guide avatars
+- **Association Tours**: Multi-guide tours with overlapping avatars
 
 ## 🎯 Next Steps
 
-- Add more sections (features, testimonials, CTA)
-- Integrate real AI search functionality
-- Add animations with Framer Motion
-- Connect to real estate API
-- Add property detail pages
+- [ ] Integrate real AI search functionality
+- [ ] Add guide and tour detail pages
+- [ ] Implement booking flow
+- [ ] Add user authentication
+- [ ] Connect to backend API
+- [ ] Add reviews and ratings system
+- [ ] Implement search filters
+- [ ] Add payment integration
 
 ## 📝 License
 
 MIT
-
