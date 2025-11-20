@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { MapPin, ChevronRight, ChevronLeft } from "lucide-react";
 
 export default function GuidesCarousel() {
@@ -100,7 +101,13 @@ export default function GuidesCarousel() {
   ];
 
   return (
-    <section className="w-full py-8 px-6">
+    <motion.section
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+      className="w-full py-8 px-6"
+    >
       <div className="max-w-7xl mx-auto">
         {/* Header with Title and View All Button */}
         <div className="flex items-center justify-between mb-8">
@@ -196,6 +203,6 @@ export default function GuidesCarousel() {
           display: none;
         }
       `}</style>
-    </section>
+    </motion.section>
   );
 }

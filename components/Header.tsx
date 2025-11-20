@@ -2,13 +2,19 @@
 
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="sticky inset-x-0 top-0 z-50 bg-white border-b border-gray-200">
+    <motion.header
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="sticky inset-x-0 top-0 z-50 bg-white border-b border-gray-200"
+    >
       {/* Main header content */}
       <div className="relative py-4">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -141,6 +147,6 @@ export default function Header() {
           )}
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 
 export default function DestinationsCarousel() {
@@ -41,54 +42,60 @@ export default function DestinationsCarousel() {
   const destinations = [
     {
       id: 1,
-      name: "Spain",
+      name: "Madrid",
       image: "https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=600&h=800&fit=crop",
     },
     {
       id: 2,
-      name: "France",
+      name: "Paris",
       image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&h=800&fit=crop",
     },
     {
       id: 3,
-      name: "Italy",
+      name: "Rome",
       image: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=600&h=800&fit=crop",
     },
     {
       id: 4,
-      name: "United Kingdom",
+      name: "London",
       image: "https://images.unsplash.com/photo-1486299267070-83823f5448dd?w=600&h=800&fit=crop",
     },
     {
       id: 5,
-      name: "Germany",
+      name: "Berlin",
       image: "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=600&h=800&fit=crop",
     },
     {
       id: 6,
-      name: "Greece",
+      name: "Athens",
       image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?w=600&h=800&fit=crop",
     },
     {
       id: 7,
-      name: "Portugal",
+      name: "Lisbon",
       image: "https://images.unsplash.com/photo-1590787979676-e8251b821eb8?w=600&h=800&fit=crop",
     },
     {
       id: 8,
-      name: "Netherlands",
+      name: "Amsterdam",
       image: "https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?w=600&h=800&fit=crop",
     }
   ];
 
   return (
-    <section className="w-full py-8 px-6">
+    <motion.section
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+      className="w-full py-8 px-6"
+    >
       <div className="max-w-7xl mx-auto">
         {/* Header with Title and View All Button */}
         <div className="flex items-center justify-between mb-8">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-              Popular Countries
+              Popular Cities
             </h2>
             <p className="text-gray-600 mt-2">
               Explore top destinations with local experts
@@ -130,15 +137,15 @@ export default function DestinationsCarousel() {
             className="overflow-x-auto pb-4 -mx-6 px-6 scrollbar-hide scroll-smooth"
           >
             <div className="flex gap-6" style={{ width: "max-content" }}>
-              {destinations.map((country) => (
+              {destinations.map((city) => (
                 <div
-                  key={country.id}
+                  key={city.id}
                   className="relative w-72 h-96 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group/card"
                 >
-                  {/* Country Image */}
+                  {/* City Image */}
                   <img
-                    src={country.image}
-                    alt={country.name}
+                    src={city.image}
+                    alt={city.name}
                     className="absolute inset-0 w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-500"
                   />
                   
@@ -147,7 +154,7 @@ export default function DestinationsCarousel() {
 
                   {/* Content */}
                   <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
-                    <h3 className="text-2xl font-bold mb-1">{country.name}</h3>
+                    <h3 className="text-2xl font-bold mb-1">{city.name}</h3>
                   </div>
                 </div>
               ))}
@@ -165,6 +172,6 @@ export default function DestinationsCarousel() {
           display: none;
         }
       `}</style>
-    </section>
+    </motion.section>
   );
 }

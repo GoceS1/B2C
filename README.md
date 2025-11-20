@@ -13,7 +13,7 @@ components/
 ├── LogoCarousel.tsx          # Auto-scrolling association logos
 ├── GuidesCarousel.tsx         # Featured guides horizontal carousel
 ├── ToursCarousel.tsx         # Popular tours horizontal carousel
-├── DestinationsCarousel.tsx   # Popular countries horizontal carousel
+├── DestinationsCarousel.tsx   # Popular cities horizontal carousel
 └── ui/                        # Reusable UI components
     ├── button.tsx
     ├── animated-text.tsx
@@ -101,20 +101,20 @@ These three carousel components are **production-ready** and should be implement
 
 ### 3. **DestinationsCarousel** (`components/DestinationsCarousel.tsx`)
 
-**Purpose**: Displays popular countries/destinations in a horizontal scrolling carousel.
+**Purpose**: Displays popular cities/destinations in a horizontal scrolling carousel.
 
 **Key Features**:
-- Large country cards with full-bleed images
+- Large city cards with full-bleed images
 - Dark gradient overlay at bottom for text legibility
-- Country name displayed at bottom
+- City name displayed at bottom
 - Hover effects with image scale
 
 **Data Structure**:
 ```typescript
 {
   id: number;
-  name: string;              // Country name
-  image: string;              // Country/destination image URL
+  name: string;              // City name
+  image: string;              // City/destination image URL
 }
 ```
 
