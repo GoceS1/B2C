@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
-import { Star, Clock, Users, ChevronRight, ChevronLeft } from "lucide-react";
+import { ChevronRight, ChevronLeft } from "lucide-react";
 
 export default function ToursCarousel() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -42,66 +42,80 @@ export default function ToursCarousel() {
       title: "Historic Berlin Walking Tour",
       location: "Berlin, Germany",
       image: "https://images.unsplash.com/photo-1560969184-10fe8719e047?w=600&h=400&fit=crop",
-      rating: 4.9,
-      reviews: 342,
-      duration: "3 hours",
-      groupSize: "Up to 15",
       price: 35,
+      priceType: "per person" as const,
+      type: "association" as const,
+      guides: [
+        { name: "Anna", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" },
+        { name: "Felix", avatar: "https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?w=100&h=100&fit=crop" },
+        { name: "Lena", avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop" },
+      ],
     },
     {
       id: 2,
       title: "Louvre & Eiffel Tower Experience",
       location: "Paris, France",
       image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&h=400&fit=crop",
-      rating: 5.0,
-      reviews: 567,
-      duration: "5 hours",
-      groupSize: "Up to 12",
       price: 89,
+      priceType: "per person" as const,
+      type: "signature" as const,
+      guide: {
+        name: "Elise Moreau",
+        avatar: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=100&h=100&fit=crop",
+      },
     },
     {
       id: 3,
       title: "Colosseum & Roman Forum Tour",
       location: "Rome, Italy",
       image: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=600&h=400&fit=crop",
-      rating: 4.8,
-      reviews: 423,
-      duration: "4 hours",
-      groupSize: "Up to 20",
       price: 65,
+      priceType: "per group" as const,
+      type: "association" as const,
+      guides: [
+        { name: "Marco", avatar: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=100&h=100&fit=crop" },
+        { name: "Giulia", avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop" },
+        { name: "Riccardo", avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop" },
+      ],
     },
     {
       id: 4,
       title: "Neuschwanstein Castle Day Trip",
       location: "Munich, Germany",
       image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=600&h=400&fit=crop",
-      rating: 4.9,
-      reviews: 289,
-      duration: "8 hours",
-      groupSize: "Up to 25",
       price: 78,
+      priceType: "per person" as const,
+      type: "signature" as const,
+      guide: {
+        name: "Laura Schäfer",
+        avatar: "https://images.unsplash.com/photo-1504593811423-6dd665756598?w=100&h=100&fit=crop",
+      },
     },
     {
       id: 5,
       title: "Thames River & London Eye",
       location: "London, UK",
       image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&h=400&fit=crop",
-      rating: 4.7,
-      reviews: 512,
-      duration: "2.5 hours",
-      groupSize: "Up to 30",
       price: 45,
+      priceType: "per group" as const,
+      type: "association" as const,
+      guides: [
+        { name: "Emily", avatar: "https://images.unsplash.com/photo-1504593811423-6dd665756598?w=100&h=100&fit=crop" },
+        { name: "James", avatar: "https://images.unsplash.com/photo-1502764613149-7f1d229e2305?w=100&h=100&fit=crop" },
+      ],
     },
     {
       id: 6,
       title: "Sagrada Familia & Park Güell",
       location: "Barcelona, Spain",
       image: "https://images.unsplash.com/photo-1583422409516-2895a77efded?w=600&h=400&fit=crop",
-      rating: 5.0,
-      reviews: 634,
-      duration: "4.5 hours",
-      groupSize: "Up to 18",
       price: 72,
+      priceType: "per person" as const,
+      type: "signature" as const,
+      guide: {
+        name: "Isabella Torres",
+        avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop",
+      },
     },
   ];
 
@@ -153,57 +167,66 @@ export default function ToursCarousel() {
             ref={scrollContainerRef}
             className="overflow-x-auto pb-4 -mx-6 px-6 scrollbar-hide scroll-smooth"
           >
-            <div className="flex gap-6" style={{ width: "max-content" }}>
-              {tours.map((tour) => (
-                <div
-                  key={tour.id}
-                  className="w-80 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group"
-                >
-                  {/* Tour Image */}
-                  <div className="relative h-52 overflow-hidden">
-                    <img
-                      src={tour.image}
-                      alt={tour.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                    />
-                    <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-1">
-                      <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                      <span className="font-semibold text-sm">{tour.rating}</span>
-                      <span className="text-gray-500 text-sm">({tour.reviews})</span>
-                    </div>
-                  </div>
-
-                  {/* Tour Info */}
-                  <div className="p-5">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
-                      {tour.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm mb-4">{tour.location}</p>
-                    
-                    <div className="flex items-center gap-4 mb-4 text-sm text-gray-600">
-                      <div className="flex items-center gap-1">
-                        <Clock className="w-4 h-4" />
-                        <span>{tour.duration}</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Users className="w-4 h-4" />
-                        <span>{tour.groupSize}</span>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                      <div>
-                        <span className="text-gray-500 text-sm">From</span>
-                        <p className="font-bold text-gray-900 text-xl">€{tour.price}</p>
-                      </div>
-                      <button className="px-5 py-2 bg-gray-900 text-white rounded-full text-sm font-semibold hover:bg-gray-800 transition-colors">
-                        Book Now
-                      </button>
-                    </div>
-                  </div>
+          <div className="flex gap-6" style={{ width: "max-content" }}>
+            {tours.map((tour) => (
+              <div
+                key={tour.id}
+                className="group/card relative w-72 flex-shrink-0 cursor-pointer"
+              >
+                <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl">
+                  <img
+                    src={tour.image}
+                    alt={tour.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/5 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300" />
                 </div>
-              ))}
-            </div>
+
+                <div className="mt-3">
+                  <h3 className="text-base font-semibold text-gray-900 leading-snug truncate pr-2">
+                    {tour.title}
+                  </h3>
+                  
+                  <p className="text-gray-500 text-sm mt-0.5 truncate">
+                    {tour.location}
+                  </p>
+                  
+                  <div className="mt-1.5 flex items-baseline gap-1">
+                    <span className="text-sm text-gray-900">From</span>
+                    <span className="text-sm font-bold text-gray-900">€{tour.price}</span>
+                    <span className="text-gray-500 text-sm">{tour.priceType}</span>
+                  </div>
+
+                  {tour.type === "signature" && tour.guide && (
+                    <div className="mt-2 flex items-center gap-2">
+                      <img
+                        src={tour.guide.avatar}
+                        alt={tour.guide.name}
+                        className="w-6 h-6 rounded-full object-cover"
+                      />
+                      <span className="text-xs text-gray-600">Signature tour by {tour.guide.name}</span>
+                    </div>
+                  )}
+
+                  {tour.type === "association" && tour.guides && (
+                    <div className="mt-2 flex items-center gap-2">
+                      <div className="flex -space-x-2 overflow-hidden">
+                        {tour.guides.map((guide, idx) => (
+                          <img
+                            key={idx}
+                            className="inline-block h-6 w-6 rounded-full ring-2 ring-white"
+                            src={guide.avatar}
+                            alt={guide.name}
+                          />
+                        ))}
+                      </div>
+                      <span className="text-xs text-gray-600">Association tour with {tour.guides.length}+ local guides</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
           </div>
         </div>
       </div>

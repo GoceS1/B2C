@@ -127,7 +127,7 @@ export default function Hero() {
                       />
                       <button 
                         type="submit"
-                        className="shrink-0 rounded-full px-8 py-2 bg-[#87CEEB] text-white font-semibold hover:bg-[#6FB6D5] transition-colors"
+                        className="shrink-0 rounded-full px-8 py-2 bg-[#D3B7FF] text-gray-900 font-semibold hover:bg-[#BDA0EC] transition-colors"
                       >
                         Search
                       </button>
@@ -224,7 +224,7 @@ export default function Hero() {
                   />
                   <button
                     type="submit"
-                    className="shrink-0 rounded-full px-6 py-2 bg-[#87CEEB] text-white font-semibold hover:bg-[#6FB6D5] transition-colors flex items-center gap-2"
+                    className="shrink-0 rounded-full px-6 py-2 bg-[#D3B7FF] text-gray-900 font-semibold hover:bg-[#BDA0EC] transition-colors flex items-center gap-2"
                   >
                     <Send className="w-4 h-4" />
                     Send

@@ -1,21 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { AnimatedText } from "@/components/ui/animated-text";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isProductsOpen, setIsProductsOpen] = useState(false);
 
   return (
-    <header className="sticky inset-x-0 top-0 z-50">
-      {/* Gradient blur background */}
-      <div className="absolute inset-0 opacity-20 blur bg-gradient-to-r from-[#EBC8EB] via-[#DEB8DE] to-[#EBC8EB]"></div>
-      
+    <header className="sticky inset-x-0 top-0 z-50 bg-white border-b border-gray-200">
       {/* Main header content */}
-      <div className="relative bg-white/90 py-4 backdrop-blur-lg border-b border-gray-200/50">
+      <div className="relative py-4">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="relative flex items-center justify-between">
             {/* Mobile menu button */}
@@ -36,14 +31,14 @@ export default function Header() {
             {/* Logo */}
             <div className="relative z-10 shrink-0">
               <a href="/" className="flex items-center gap-3">
-                <span className="text-3xl font-bold text-[#EBC8EB]">
+                <span className="text-3xl font-bold text-gray-900">
                   Keyguidesconnect
                 </span>
               </a>
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex lg:items-center lg:gap-2 lg:ml-40">
+            <div className="hidden lg:absolute lg:inset-0 lg:flex lg:items-center lg:justify-center lg:gap-8">
               <a
                 href="#guides"
                 className="inline-flex items-center rounded-lg border border-transparent px-3 py-2 text-base font-medium text-gray-700 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-1 focus:ring-gray-300"
@@ -66,30 +61,33 @@ export default function Header() {
               </a>
 
               <a
-                href="#help"
-                className="inline-flex items-center rounded-lg border border-transparent px-3 py-2 text-base font-medium text-gray-700 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-1 focus:ring-gray-300"
-              >
-                Help
-              </a>
-
-              <a
                 href="#about"
                 className="inline-flex items-center rounded-lg border border-transparent px-3 py-2 text-base font-medium text-gray-700 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-1 focus:ring-gray-300"
               >
                 About
               </a>
+
+              <a
+                href="#help"
+                className="inline-flex items-center rounded-lg border border-transparent px-3 py-2 text-base font-medium text-gray-700 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-1 focus:ring-gray-300"
+              >
+                Help
+              </a>
             </div>
 
             {/* CTA Buttons */}
-            <div className="relative z-10 flex items-center gap-x-3 ml-auto">
+            <div className="relative z-10 flex items-center gap-x-3">
               <div className="hidden sm:block">
                 <button className="inline-flex h-10 items-center justify-center rounded-xl border border-gray-300 px-4 py-2 text-base font-semibold text-gray-900 transition-all duration-200 hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2">
                   Sign in
                 </button>
               </div>
-              <button className="inline-flex h-10 items-center justify-center rounded-xl bg-[#EBC8EB] px-4 py-2 text-base font-semibold text-gray-900 transition-all duration-200 hover:bg-[#DEB8DE] focus:outline-none focus:ring-2 focus:ring-[#EBC8EB] focus:ring-offset-2">
+              <Button
+                size="default"
+                className="bg-[#EBC8EB] hover:bg-[#DEB8DE] text-gray-900 font-semibold"
+              >
                 Login
-              </button>
+              </Button>
             </div>
           </div>
 
@@ -116,24 +114,27 @@ export default function Header() {
                   Blog
                 </a>
                 <a
-                  href="#help"
-                  className="rounded-lg px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                >
-                  Help
-                </a>
-                <a
                   href="#about"
                   className="rounded-lg px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                 >
                   About
                 </a>
+                <a
+                  href="#help"
+                  className="rounded-lg px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                >
+                  Help
+                </a>
                 <div className="sm:hidden pt-2 border-t border-gray-200 flex flex-col gap-2">
                   <button className="w-full rounded-xl border border-gray-300 px-4 py-2 text-base font-semibold text-gray-900 hover:border-gray-500">
                     Sign in
                   </button>
-                  <button className="w-full rounded-xl bg-[#EBC8EB] px-4 py-2 text-base font-semibold text-gray-900 hover:bg-[#DEB8DE]">
+                  <Button
+                    size="default"
+                    className="bg-[#EBC8EB] hover:bg-[#DEB8DE] text-gray-900 font-semibold w-full rounded-xl"
+                  >
                     Login
-                  </button>
+                  </Button>
                 </div>
               </div>
             </div>
@@ -143,4 +144,3 @@ export default function Header() {
     </header>
   );
 }
-

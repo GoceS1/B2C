@@ -28,7 +28,7 @@ const config: Config = {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
-        'gradient-primary': 'linear-gradient(135deg, #EBC8EB 0%, #DEB8DE 50%, #EBC8EB 100%)',
+        'gradient-primary': 'linear-gradient(135deg, #6F3FF5 0%, #FF6A3D 60%, #FF82C6 100%)',
       },
     },
   },
