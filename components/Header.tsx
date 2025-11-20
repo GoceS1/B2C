@@ -90,7 +90,7 @@ export default function Header() {
               </div>
               <Button
                 size="default"
-                className="bg-[#EBC8EB] hover:bg-[#DEB8DE] text-gray-900 font-semibold"
+                className="bg-[#eecfee] hover:bg-[#d8b8d8] text-gray-900 font-semibold"
               >
                 Login
               </Button>
@@ -137,7 +137,7 @@ export default function Header() {
                   </button>
                   <Button
                     size="default"
-                    className="bg-[#EBC8EB] hover:bg-[#DEB8DE] text-gray-900 font-semibold w-full rounded-xl"
+                    className="bg-[#eecfee] hover:bg-[#d8b8d8] text-gray-900 font-semibold w-full rounded-xl"
                   >
                     Login
                   </Button>

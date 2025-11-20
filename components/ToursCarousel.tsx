@@ -132,7 +132,7 @@ export default function ToursCarousel() {
               Explore the best experiences in top European destinations
             </p>
           </div>
-          <button className="flex items-center gap-2 px-6 py-3 bg-[#EBC8EB] text-gray-900 font-semibold rounded-full hover:bg-[#DEB8DE] transition-colors">
+          <button className="flex items-center gap-2 px-6 py-3 bg-[#eecfee] text-gray-900 font-semibold rounded-full hover:bg-[#d8b8d8] transition-colors">
             View All
             <ChevronRight className="w-4 h-4" />
           </button>
@@ -144,7 +144,7 @@ export default function ToursCarousel() {
           {showLeftArrow && (
             <button 
               onClick={() => scroll('left')}
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-[#EBC8EB] p-3 rounded-full shadow-lg transition-all duration-300 hover:bg-[#DEB8DE] hover:scale-110 hidden md:flex items-center justify-center text-gray-900"
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-[#eecfee] p-3 rounded-full shadow-lg transition-all duration-300 hover:bg-[#d8b8d8] hover:scale-110 hidden md:flex items-center justify-center text-gray-900"
               aria-label="Scroll left"
             >
               <ChevronLeft className="w-6 h-6" />
@@ -155,7 +155,7 @@ export default function ToursCarousel() {
           {showRightArrow && (
             <button 
               onClick={() => scroll('right')}
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-[#EBC8EB] p-3 rounded-full shadow-lg transition-all duration-300 hover:bg-[#DEB8DE] hover:scale-110 hidden md:flex items-center justify-center text-gray-900"
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-[#eecfee] p-3 rounded-full shadow-lg transition-all duration-300 hover:bg-[#d8b8d8] hover:scale-110 hidden md:flex items-center justify-center text-gray-900"
               aria-label="Scroll right"
             >
               <ChevronRight className="w-6 h-6" />
@@ -193,7 +193,7 @@ export default function ToursCarousel() {
                   
                   <div className="mt-1.5 flex items-baseline gap-1">
                     <span className="text-sm text-gray-900">From</span>
-                    <span className="text-sm font-bold text-gray-900">€{tour.price}</span>
+                    <span className="text-sm font-bold" style={{ color: '#915A91' }}>€{tour.price}</span>
                     <span className="text-gray-500 text-sm">{tour.priceType}</span>
                   </div>
 

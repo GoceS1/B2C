@@ -102,19 +102,19 @@ export default function Hero() {
               </p>
 
               {/* Search bar in normal hero position */}
-              <div className="relative max-w-2xl mx-auto mt-12 sm:mt-16">
+              <div className="relative max-w-3xl mx-auto mt-16 sm:mt-20">
                 <div
                   className="absolute inset-0 -z-10 rounded-full opacity-60 blur-2xl"
                   style={{
                     background:
-                      "linear-gradient(90deg, #FF8BCF 0%, #FF8BCF 45%, #F3B0FF 70%, #D3B7FF 100%)",
+                      "linear-gradient(90deg, #C8A8FF 0%, #E5C0E5 50%, #eecfee 100%)",
                   }}
                 />
                 <div
-                  className="relative rounded-full p-[2px] shadow-[0_25px_60px_rgba(243,176,255,0.35)]"
+                  className="relative rounded-full p-[2px] shadow-[0_25px_60px_rgba(238,207,238,0.35)]"
                   style={{
                     background:
-                      "linear-gradient(90deg, #FF8BCF 0%, #FF8BCF 45%, #F3B0FF 70%, #D3B7FF 100%)",
+                      "linear-gradient(90deg, #C8A8FF 0%, #E5C0E5 50%, #eecfee 100%)",
                   }}
                 >
                   <form onSubmit={handleSendMessage}>
@@ -128,7 +128,7 @@ export default function Hero() {
                       />
                       <button 
                         type="submit"
-                        className="shrink-0 rounded-full px-8 py-2 bg-[#D3B7FF] text-gray-900 font-semibold hover:bg-[#BDA0EC] transition-colors"
+                        className="shrink-0 rounded-full px-8 py-2 bg-[#eecfee] text-gray-900 font-semibold hover:bg-[#d8b8d8] transition-colors"
                       >
                         Search
                       </button>
@@ -138,7 +138,7 @@ export default function Hero() {
               </div>
 
               {/* Logo Carousel */}
-              <div className="max-w-3xl mx-auto mt-10">
+              <div className="max-w-3xl mx-auto mt-12 sm:mt-16">
                 <LogoCarousel />
               </div>
             </div>
@@ -169,7 +169,7 @@ export default function Hero() {
                     <div
                       className={`max-w-[70%] px-6 py-3 rounded-3xl ${
                         message.sender === 'user'
-                          ? 'bg-[#EBC8EB] text-gray-900'
+                          ? 'bg-[#DDA4DD] text-gray-900'
                           : 'bg-white text-gray-900 shadow-md'
                       }`}
                     >
@@ -204,14 +204,14 @@ export default function Hero() {
                 className="absolute inset-0 -z-10 rounded-full opacity-60 blur-2xl"
                 style={{
                   background:
-                    "linear-gradient(90deg, #FF8BCF 0%, #FF8BCF 45%, #F3B0FF 70%, #D3B7FF 100%)",
+                    "linear-gradient(90deg, #C8A8FF 0%, #EBC8EB 50%, #eecfee 100%)",
                 }}
               />
               <div
-                className="relative rounded-full p-[2px] shadow-[0_25px_60px_rgba(243,176,255,0.35)]"
+                className="relative rounded-full p-[2px] shadow-[0_25px_60px_rgba(238,207,238,0.35)]"
                 style={{
                   background:
-                    "linear-gradient(90deg, #FF8BCF 0%, #FF8BCF 45%, #F3B0FF 70%, #D3B7FF 100%)",
+                    "linear-gradient(90deg, #C8A8FF 0%, #EBC8EB 50%, #eecfee 100%)",
                 }}
               >
                 <div className="relative flex items-center bg-white rounded-full pl-6 pr-2 py-2">
@@ -225,7 +225,7 @@ export default function Hero() {
                   />
                   <button
                     type="submit"
-                    className="shrink-0 rounded-full px-6 py-2 bg-[#D3B7FF] text-gray-900 font-semibold hover:bg-[#BDA0EC] transition-colors flex items-center gap-2"
+                    className="shrink-0 rounded-full px-6 py-2 bg-[#eecfee] text-gray-900 font-semibold hover:bg-[#d8b8d8] transition-colors flex items-center gap-2"
                   >
                     <Send className="w-4 h-4" />
                     Send
